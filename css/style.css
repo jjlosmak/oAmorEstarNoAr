@@ -4,17 +4,24 @@ body {
   text-align: center;
   padding: 20px;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 .carrossel {
-  width: 300px;
+  width: 90%; /* largura do carrossel */
+  max-width: 400px; /* largura máxima do carrossel */
   height: 450px; /* define altura visível */
   margin: 20px auto;
   border-radius: 10px;
   position: relative; /* importante para isolar o absolute das imagens */
   z-index: 2;
   overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .carrossel img {
@@ -89,4 +96,35 @@ body {
   .seta.direita {
     right: 10px;
   }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+      h1 {
+        font-size: 24px;
+      }
+      #contador {
+        font-size: 16px;
+      }
+    }
   
+    .carrossel {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2 / 3;
+    }
+  
+    .musica iframe {
+      width: 100% !important;
+      height: 80px;
+    }
+  
+    .seta {
+      font-size: 24px;
+    }
+  
+    .texto {
+      font-size: 16px;
+      max-width: 90%;
+    }
+  }
